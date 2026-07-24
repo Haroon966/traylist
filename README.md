@@ -140,3 +140,4 @@ Artifacts appear under `src-tauri/target/release/bundle/`:
 ## Privacy
 
 Todos stay on your devices. LAN sync is opt-in, token-gated, and never leaves your Wi‑Fi.
+# traylist
