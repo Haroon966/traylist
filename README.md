@@ -7,6 +7,34 @@ Local-first system tray list for **Ubuntu**, **macOS**, and **Windows**, plus an
 
 **Site:** [haroon966.github.io/traylist](https://haroon966.github.io/traylist/) · **Privacy:** todos stay on your devices; LAN sync is opt-in.
 
+## Install (desktop)
+
+One line — always pulls the **latest GitHub Release** for your OS/CPU and installs permanently (`.deb` / AppImage / `.dmg` / `.msi`):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.sh | bash
+```
+
+Windows (PowerShell):
+
+```powershell
+irm https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.ps1 | iex
+```
+
+| Edge case | Behavior |
+|-----------|----------|
+| Debian/Ubuntu + `sudo` | Prefers `.deb` (system-wide, upgrades cleanly) |
+| No `sudo` / non-dpkg Linux | AppImage → `~/.local/bin/traylist` + `.desktop` |
+| macOS | Latest `.dmg` → `/Applications`, clears Gatekeeper quarantine |
+| Windows | Latest `.msi` (quiet) or setup `.exe` |
+| Apple Silicon / Intel / arm64 Linux | Picks matching arch asset |
+| App already running | Warns — quit from tray before relaunch |
+| WSL | Warns (tray/hotkeys unreliable) |
+| No release published yet | Clear error — tag `vX.Y.Z` (must match app version) to trigger [release-desktop](.github/workflows/release-desktop.yml) |
+| Fork / prerelease | `TRAYLIST_REPO=you/fork bash` · `TRAYLIST_PRERELEASE=1 bash` |
+
+Prefer reading the script before piping to a shell: [scripts/install.sh](scripts/install.sh).
+
 ## Features
 
 - System tray icon with open-count badge / tooltip — click opens the panel (inline add) top-right
