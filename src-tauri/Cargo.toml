@@ -1,0 +1,42 @@
+[package]
+name = "traylist"
+version = "0.1.0"
+description = "Local-first system tray todo list with same-WiFi sync"
+authors = ["Haroon966"]
+edition = "2021"
+
+[lib]
+name = "traylist_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-store = "2"
+tauri-plugin-notification = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "sync", "time"] }
+axum = { version = "0.8", features = ["ws"] }
+futures-util = "0.3"
+tokio-tungstenite = "0.26"
+mdns-sd = "0.13"
+rand = "0.8"
+local-ip-address = "0.6"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+tauri-plugin-barcode-scanner = "2"
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-autostart = "2"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+ksni = { version = "0.3", features = ["blocking"] }
+
+[target.'cfg(target_os = "android")'.dependencies]
+tauri-plugin-widgets = "0.3"

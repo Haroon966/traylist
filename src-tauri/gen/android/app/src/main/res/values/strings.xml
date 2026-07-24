@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">"Traylist"</string>
+    <string name="main_activity_title">"Traylist"</string>
+    <string name="widget_name">"Traylist todos"</string>
+</resources>

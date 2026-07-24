@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Traylist — local-first system tray todo list for Ubuntu, macOS, and Windows, plus Android sync over the same Wi‑Fi. No account. Your data stays on your devices." />
+  <meta name="theme-color" content="#0D7377" />
+  <title>Traylist — Todos in your system tray</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#home">
+        <img class="nav__logo" src="assets/app-icon.png" width="28" height="28" alt="" />
+        <span>Traylist</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="nav-menu" class="nav__links">
+        <li><a href="#home" class="is-active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#desktop">Desktop</a></li>
+        <li><a href="#android">Android</a></li>
+        <li><a href="#sync">Wi‑Fi Sync</a></li>
+        <li class="nav__cta-wrap"><a class="btn btn--dark nav__cta nav__cta--menu" href="#download">Get The App</a></li>
+      </ul>
+
+      <a class="btn btn--dark nav__cta nav__cta--bar" href="#download">Get The App</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/hero-morning.png" alt="" class="hero__bg-img" width="1920" height="1080" />
+        <div class="hero__bg-fade"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__copy reveal">
+          <h1 id="hero-title">Todos in your tray.<br />Synced on your Wi‑Fi.</h1>
+          <p class="hero__sub">
+            Traylist is a local-first checklist for Ubuntu, macOS, and Windows — always one click
+            from the system tray — plus an Android app that pairs over the same network.
+            No account. No cloud. Your list stays on your devices.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--sky" href="#download">Download Traylist</a>
+            <a class="btn btn--ghost" href="#how-it-works">How it works</a>
+          </div>
+        </div>
+
+        <div class="hero__phone reveal reveal--delay">
+          <div class="device-stack">
+            <img
+              class="device-stack__desk"
+              src="assets/traylist-desktop-ui.png"
+              alt="Traylist desktop panel showing a todo list with due dates in the system tray style"
+              width="640"
+              height="400"
+              loading="eager"
+            />
+            <img
+              class="device-stack__phone"
+              src="assets/traylist-mobile-ui.png"
+              alt="Traylist Android app showing the same todos on a phone"
+              width="280"
+              height="560"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Platforms">
+      <p class="trust__label">Runs where you already work</p>
+      <ul class="trust__logos">
+        <li>Ubuntu</li>
+        <li>macOS</li>
+        <li>Windows</li>
+        <li>Android</li>
+        <li>Local Wi‑Fi</li>
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="container about__split">
+        <div class="about__copy reveal">
+          <span class="pill">What is Traylist?</span>
+          <h2 id="about-title">A tray list — not another tab</h2>
+          <p>
+            Most todo apps live in a browser or a big window you forget to open. Traylist lives in
+            the <strong>system tray</strong>: click the icon (or hit the global hotkey) and a compact
+            panel appears for add / complete / delete. Close it and you’re back to work — the app
+            stays quietly in the tray with an open-count badge.
+          </p>
+          <p>
+            On Android, the same list syncs over your <strong>home or office Wi‑Fi</strong> after a
+            one-time QR (or 6-digit) pair. Todos never leave your LAN unless you export them yourself.
+          </p>
+          <ul class="check-list">
+            <li>Local JSON store — no signup</li>
+            <li>Follows OS light / dark appearance</li>
+            <li>Built with Tauri (Rust + web UI)</li>
+          </ul>
+        </div>
+        <figure class="about__art reveal reveal--delay">
+          <img src="assets/empty-happy.png" alt="Traylist mascot — a friendly teal sprout character waving" width="640" height="640" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Everything in one panel</span>
+          <h2 id="features-title">Smart features for everyday lists</h2>
+          <p class="section__lead">
+            Type naturally, get icons and due chips for free — then sync the same list to your phone on Wi‑Fi.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-card--green reveal">
+            <div class="feature-card__art">
+              <img src="assets/traylist-feature-tray.png" alt="Illustration of a system tray todo popup beside a laptop" width="560" height="420" loading="lazy" />
+            </div>
+            <h3>Always in the tray</h3>
+            <p>
+              Open-count badge and tooltip on the tray icon. Left-click or hotkey opens the panel;
+              Esc or click-away hides it. Right-click for Open / Quit. Launch at login if you want.
+            </p>
+          </article>
+
+          <article class="feature-card feature-card--blue reveal reveal--delay">
+            <div class="feature-card__art">
+              <img src="assets/traylist-feature-due.png" alt="Illustration of due dates, calendar chips, and notifications" width="560" height="420" loading="lazy" />
+            </div>
+            <h3>Natural due dates</h3>
+            <p>
+              Type <code>tomorrow 3pm</code>, <code>fri</code>, or <code>in 2h</code>. Lists sort overdue → today → later.
+              OS notifications when due; snooze <code>10m</code> / <code>1h</code> / <code>tomorrow</code> on overdue chips.
+            </p>
+          </article>
+
+          <article class="feature-card feature-card--orange reveal reveal--delay2">
+            <div class="feature-card__art">
+              <img src="assets/traylist-feature-sync.png" alt="Illustration of phone and laptop syncing over Wi-Fi with a QR code" width="560" height="420" loading="lazy" />
+            </div>
+            <h3>Same-Wi‑Fi sync</h3>
+            <p>
+              Desktop hosts a local hub. Android scans a QR (or enters a 6-digit code) once, then
+              auto-reconnects on your LAN. Token-gated — never leaves your Wi‑Fi.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE FEATURES -->
+    <section id="toolkit" class="section toolkit" aria-labelledby="toolkit-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">The everyday toolkit</span>
+          <h2 id="toolkit-title">What you can do in Traylist</h2>
+        </div>
+        <div class="module-grid">
+          <article class="module reveal">
+            <h3>Add · complete · delete</h3>
+            <p>Inline add in the panel. Completions and deletes stay local; undo with Ctrl/Cmd+Z.</p>
+          </article>
+          <article class="module reveal reveal--delay">
+            <h3>Keyword icons</h3>
+            <p>Auto icons from words like <code>buy</code>, <code>meet</code>, <code>email</code> — no manual tagging.</p>
+          </article>
+          <article class="module reveal reveal--delay2">
+            <h3>Markdown-lite</h3>
+            <p>Titles support <code>**bold**</code>, <code>*italic*</code>, and <code>`code`</code> without a full editor.</p>
+          </article>
+          <article class="module reveal">
+            <h3>Global hotkey</h3>
+            <p>Ctrl+Shift+Space (Win/Linux) or Cmd+Shift+Space (macOS) toggles the panel from anywhere.</p>
+          </article>
+          <article class="module reveal reveal--delay">
+            <h3>Export &amp; restore</h3>
+            <p>Export / restore JSON backups. Export Markdown when you need a readable dump.</p>
+          </article>
+          <article class="module reveal reveal--delay2">
+            <h3>Bin &amp; widgets</h3>
+            <p>Deleted items go to a bin. Android can surface tasks on a home-screen widget preview.</p>
+          </article>
+          <article class="module reveal">
+            <h3>Light &amp; dark</h3>
+            <p>Follows your OS appearance so the panel matches the rest of your desktop.</p>
+          </article>
+          <article class="module reveal reveal--delay">
+            <h3>Privacy first</h3>
+            <p>No account cloud. LAN sync is opt-in. Forget devices on desktop to rotate the pair code.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how-it-works" class="section how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill pill--dark">Minutes to useful</span>
+          <h2 id="how-title">How Traylist works</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3>Install desktop</h3>
+            <p>Grab the build for Ubuntu (.deb / AppImage), macOS (.dmg), or Windows (.msi / .exe).</p>
+          </li>
+          <li class="step reveal reveal--delay">
+            <span class="step__num">02</span>
+            <h3>Live in the tray</h3>
+            <p>Window starts hidden. Use the tray icon or hotkey. Add something like <code>Buy **milk** tomorrow 3pm</code>.</p>
+          </li>
+          <li class="step reveal reveal--delay2">
+            <span class="step__num">03</span>
+            <h3>Enable Wi‑Fi Sync</h3>
+            <p>⋯ → Wi‑Fi Sync… → enable. A QR code and 6-digit code appear (LAN IP + port).</p>
+          </li>
+          <li class="step reveal reveal--delay3">
+            <span class="step__num">04</span>
+            <h3>Pair Android</h3>
+            <p>On phone: Wi‑Fi Sync… → Scan QR (or Find desktop + code). Pair once; then both push updates on the same network.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DESKTOP -->
+    <section id="desktop" class="section desktop" aria-labelledby="desktop-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Ubuntu · macOS · Windows</span>
+          <h2 id="desktop-title">Desktop — the tray host</h2>
+          <p class="section__lead">
+            Desktop is the source of truth for sync. It hosts the local WebSocket hub, shows the tray badge,
+            fires OS notifications, and keeps your JSON store on disk.
+          </p>
+        </div>
+
+        <div class="desktop-showcase reveal">
+          <img
+            class="shot"
+            src="assets/traylist-desktop-ui.png"
+            alt="Traylist floating desktop panel with checklist, due chips, and tray-style chrome"
+            width="1100"
+            height="620"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="explain-grid">
+          <article class="explain reveal">
+            <h3>Tray panel UI</h3>
+            <p>Compact list with inline add. Completing or deleting is one click. Panel hides on Esc / click-away; Quit from the tray menu or ⋯.</p>
+          </article>
+          <article class="explain reveal reveal--delay">
+            <h3>Notifications &amp; snooze</h3>
+            <p>When a due time hits, the OS notifies you. Overdue chips offer snooze: 10 minutes, 1 hour, or tomorrow.</p>
+          </article>
+          <article class="explain reveal reveal--delay2">
+            <h3>Sync hub</h3>
+            <p>Enable Wi‑Fi Sync to show QR + code. Phones reconnect automatically on the same LAN. Forget devices to revoke tokens.</p>
+          </article>
+          <article class="explain reveal">
+            <h3>Autostart</h3>
+            <p>Optional launch at login so the tray icon is there when you sit down.</p>
+          </article>
+          <article class="explain reveal reveal--delay">
+            <h3>Backups</h3>
+            <p>Export JSON to back up or move machines. Restore when needed. Markdown export for sharing a readable list.</p>
+          </article>
+          <article class="explain reveal reveal--delay2">
+            <h3>Build outputs</h3>
+            <p>Linux: .deb / AppImage · macOS: .dmg / .app · Windows: .msi / .exe — via <code>npm run tauri build</code>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANDROID -->
+    <section id="android" class="section mobile-app" aria-labelledby="android-title">
+      <div class="container about__split about__split--rev">
+        <div class="about__copy reveal">
+          <span class="pill">Android companion</span>
+          <h2 id="android-title">Phone list, same Wi‑Fi</h2>
+          <p>
+            The Android app is built for the same Tauri stack. After pairing, adds and completes
+            on either side push over a local WebSocket. Walk to another room on the same network —
+            you’re still in sync. Leave the Wi‑Fi and the phone keeps its last local copy.
+          </p>
+          <ul class="check-list">
+            <li>Scan QR or enter 6-digit code</li>
+            <li>Find desktop on the LAN</li>
+            <li>Home widget preview for open tasks</li>
+            <li>Bin for recently deleted items</li>
+          </ul>
+          <a class="btn btn--teal" href="#download">Get Android build</a>
+        </div>
+        <figure class="phone-frame reveal reveal--delay">
+          <img src="assets/traylist-mobile-ui.png" alt="Traylist on Android — todo list with due chips" width="360" height="720" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- SYNC -->
+    <section id="sync" class="section sync" aria-labelledby="sync-title">
+      <div class="container sync__grid">
+        <div class="reveal">
+          <span class="pill">Local network only</span>
+          <h2 id="sync-title">Wi‑Fi Sync — explained</h2>
+          <p>
+            Desktop enables a hub on your LAN IP + port. The QR encodes how the phone should connect.
+            Pairing is one-time and token-gated. After that, both sides push patches whenever they’re
+            on the same Wi‑Fi. No Traylist cloud in the middle.
+          </p>
+          <img class="sync__img" src="assets/traylist-feature-sync.png" alt="Phone and laptop syncing over local Wi-Fi" width="640" height="480" loading="lazy" />
+        </div>
+        <ol class="sync-steps reveal reveal--delay">
+          <li><strong>Enable on desktop</strong> — ⋯ → Wi‑Fi Sync… → turn sync on.</li>
+          <li><strong>Show QR / code</strong> — LAN address + port + pairing secret.</li>
+          <li><strong>Scan on Android</strong> — or Find desktop and type the 6-digit code.</li>
+          <li><strong>Auto-reconnect</strong> — next time you’re on the same network, sync resumes.</li>
+          <li><strong>Forget devices</strong> — rotates the code and drops old tokens if a phone is lost.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- COMPARE -->
+    <section id="compare" class="section about" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Desktop vs Android</span>
+          <h2 id="compare-title">Who does what</h2>
+        </div>
+        <div class="compare reveal">
+          <div class="compare__table" role="table" aria-label="Desktop versus Android">
+            <div class="compare__row compare__row--head" role="row">
+              <span role="columnheader">Capability</span>
+              <span role="columnheader">Desktop</span>
+              <span role="columnheader">Android</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>System tray + badge</span>
+              <span class="yes">Yes</span>
+              <span class="muted">—</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>Global hotkey</span>
+              <span class="yes">Yes</span>
+              <span class="muted">—</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>Add / complete / delete</span>
+              <span class="yes">Yes</span>
+              <span class="yes">Yes</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>Due dates, icons, markdown-lite</span>
+              <span class="yes">Yes</span>
+              <span class="yes">Yes</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>OS due notifications + snooze</span>
+              <span class="yes">Yes</span>
+              <span class="yes">Yes</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>Hosts Wi‑Fi sync hub</span>
+              <span class="yes">Yes</span>
+              <span class="muted">Client</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>QR / code pairing</span>
+              <span class="yes">Shows</span>
+              <span class="yes">Scans</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>Export JSON / Markdown</span>
+              <span class="yes">Yes</span>
+              <span class="muted">Via sync + desktop</span>
+            </div>
+            <div class="compare__row" role="row">
+              <span>Home widget</span>
+              <span class="muted">—</span>
+              <span class="yes">Yes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy" class="section knowledge" aria-labelledby="privacy-title">
+      <div class="container">
+        <div class="section__head section__head--light reveal">
+          <span class="pill pill--light">Local-first</span>
+          <h2 id="privacy-title">Privacy by design</h2>
+          <p class="section__lead">
+            Todos live in a local JSON store on each device. LAN sync is opt-in, token-gated, and
+            stays on your Wi‑Fi. There is no Traylist account cloud for your list.
+          </p>
+        </div>
+        <div class="knowledge-grid">
+          <article class="knowledge-card reveal">
+            <span class="knowledge-card__tag">Store</span>
+            <h3>On-device JSON</h3>
+            <p>Your checklist file stays with the app. Export when you want a backup you control.</p>
+          </article>
+          <article class="knowledge-card reveal reveal--delay">
+            <span class="knowledge-card__tag">Sync</span>
+            <h3>LAN only</h3>
+            <p>WebSocket between desktop hub and phone. Same network required. Rotate codes anytime.</p>
+          </article>
+          <article class="knowledge-card reveal reveal--delay2">
+            <span class="knowledge-card__tag">Account</span>
+            <h3>None required</h3>
+            <p>No email signup to start listing. Install, type, done.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Questions</span>
+          <h2 id="faq-title">FAQ</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal" open>
+            <summary>Is Traylist free / open to build?</summary>
+            <p>You can build from this repo with Node 18+, Rust, and OS webview deps. Desktop: <code>npm run tauri dev</code> / <code>npm run tauri build</code>. Android needs Android SDK/NDK.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Why doesn’t the window stay open?</summary>
+            <p>That’s intentional. Traylist hides to the tray on close/Esc/click-away so it stays out of your way. Use Quit from the tray menu or ⋯ to exit fully.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Does sync work off my home Wi‑Fi?</summary>
+            <p>No — sync is same-LAN only. Off-network, each device keeps its local copy until you’re back on the shared Wi‑Fi.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Can I use Android without desktop?</summary>
+            <p>Android is the companion for Wi‑Fi sync with a desktop host. Day-to-day listing on phone works after pair; the hub still lives on desktop.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Example of a powerful task line?</summary>
+            <p>Try <code>Buy **milk** tomorrow 3pm</code> — you get a shopping icon, bold “milk”, and a due chip sorted into today/later automatically.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="section download" aria-labelledby="download-title">
+      <div class="container download__box reveal">
+        <div>
+          <h2 id="download-title">Get Traylist on your machines</h2>
+          <p>
+            Build installers with <code>npm run tauri build</code>. Artifacts land under
+            <code>src-tauri/target/release/bundle/</code>. Android: <code>npm run tauri android build</code>.
+          </p>
+          <div class="store-row">
+            <a class="store-btn" href="#desktop">
+              <img src="assets/tray-icon.png" width="22" height="22" alt="" />
+              <span><small>Desktop</small>Linux · macOS · Windows</span>
+            </a>
+            <a class="store-btn" href="#android">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3.6 2.3c-.3.2-.6.6-.6 1.1v17.2c0 .5.3.9.6 1.1l9.4-9.7L3.6 2.3zm12.1 7.1L13 7.7 4.8 2.7l9.5 9.5 1.4-2.8zM4.8 21.3l8.2-5 2.7-1.7-1.4-2.8-9.5 9.5zm14.2-7.5c.5-.3.8-.7.8-1.3s-.3-1-.8-1.3l-2.2-1.3-2.5 2.6 2.5 2.6 2.2-1.3z"/></svg>
+              <span><small>Companion</small>Android</span>
+            </a>
+            <a class="store-btn store-btn--desk" href="#sync">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span><small>Then</small>Pair over Wi‑Fi</span>
+            </a>
+          </div>
+        </div>
+        <div class="download__mascot" aria-hidden="true">
+          <img src="assets/empty-happy.png" alt="" width="180" height="180" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="nav__brand footer__brand" href="#home">
+          <img class="nav__logo" src="assets/app-icon.png" width="28" height="28" alt="" />
+          Traylist
+        </a>
+        <p>Local-first system tray todos for desktop, with Android sync on your Wi‑Fi.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#desktop">Desktop</a></li>
+          <li><a href="#android">Android</a></li>
+          <li><a href="#sync">Wi‑Fi Sync</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#compare">Compare</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Build</h3>
+        <ul>
+          <li><a href="#download">Download / build</a></li>
+          <li><a href="#faq">Build FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Traylist. Local-first by design.</p>
+      <p class="footer__note">Marketing site for GitHub Pages — install via local Tauri builds.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

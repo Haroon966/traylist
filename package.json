@@ -1,0 +1,50 @@
+{
+  "name": "traylist",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local-first system tray todo list for desktop and Android with same-WiFi sync",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Haroon966/traylist.git"
+  },
+  "homepage": "https://haroon966.github.io/traylist/",
+  "bugs": {
+    "url": "https://github.com/Haroon966/traylist/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "check:sync": "npx --yes tsx src/lib/merge.selfcheck.ts && npx --yes tsx src/lib/pairPayload.selfcheck.ts && npx --yes tsx src/lib/scanPairQr.selfcheck.ts && npx --yes tsx src/lib/firewall.selfcheck.ts"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-autostart": "^2",
+    "@tauri-apps/plugin-barcode-scanner": "^2.4.5",
+    "@tauri-apps/plugin-dialog": "^2",
+    "@tauri-apps/plugin-fs": "^2",
+    "@tauri-apps/plugin-global-shortcut": "^2",
+    "@tauri-apps/plugin-notification": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-store": "^2",
+    "chrono-node": "^2.10.1",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tauri-plugin-widgets-api": "^0.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@tauri-apps/cli": "^2",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "tailwindcss": "^4.1.11",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}

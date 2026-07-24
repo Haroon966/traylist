@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Traylist",
+        "width": 390,
+        "height": 844,
+        "resizable": true,
+        "decorations": false,
+        "transparent": false,
+        "visible": true,
+        "alwaysOnTop": false,
+        "skipTaskbar": false,
+        "focus": true,
+        "fullscreen": false
+      }
+    ]
+  }
+}

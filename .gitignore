@@ -1,0 +1,53 @@
+# Dependencies & builds
+node_modules
+dist
+dist-ssr
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.jks
+*.keystore
+keystore.properties
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cursor / local agent kit (not part of the app)
+.cursor/
+.cursor-tmp-ext/
+AGENTS.md
+skills/
+docs/pinky-*.md
+
+# Tauri / Rust (also covered under src-tauri/.gitignore)
+src-tauri/target/
+
+# Android local / signing
+**/local.properties
+**/.gradle/
+**/captures/
+**/.externalNativeBuild/
+**/.cxx/
