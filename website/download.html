@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Download Traylist for Windows, Ubuntu/Linux, macOS, and Android — direct one-click installers from GitHub Releases." />
+  <meta name="theme-color" content="#0D9488" />
+  <title>Download Traylist</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-download">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo" src="assets/app-icon.png" width="28" alt="" />
+        <span>Traylist</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="nav-menu" class="nav__links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#desktop">Desktop</a></li>
+        <li><a href="index.html#android">Android</a></li>
+        <li><a href="index.html#sync">Wi‑Fi Sync</a></li>
+        <li class="nav__cta-wrap"><a class="btn btn--cta nav__cta nav__cta--menu is-active" href="download.html" aria-current="page">Download</a></li>
+      </ul>
+
+      <a class="btn btn--cta nav__cta nav__cta--bar" href="download.html" aria-current="page">Download</a>
+    </nav>
+  </header>
+
+  <main id="main" class="dl-page">
+    <!-- Hero: brand + one CTA + product visual (App Store pattern) -->
+    <section class="dl-hero" aria-labelledby="dl-brand">
+      <div class="dl-hero__glow" aria-hidden="true"></div>
+      <div class="container dl-hero__grid">
+        <div class="dl-hero__copy">
+          <p class="dl-hero__brand" id="dl-brand">
+            <img src="assets/app-icon.png" width="48" alt="" />
+            Traylist
+          </p>
+          <h1>Get the app on every machine</h1>
+          <p class="dl-hero__sub">
+            One-click installers from GitHub Releases — desktop tray on Windows, Linux, and macOS, plus Android over the same Wi‑Fi.
+          </p>
+
+          <div class="dl-hero__actions">
+            <a
+              class="dl-hero-cta"
+              data-dl="auto"
+              href="https://github.com/Haroon966/traylist/releases/latest"
+              rel="noopener noreferrer"
+            >
+              <span class="dl-hero-cta__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3v12" /><path d="m7 11 5 5 5-5" /><path d="M5 19h14" />
+                </svg>
+              </span>
+              <span class="dl-hero-cta__text">
+                <span class="dl-card__eyebrow">Detecting your platform…</span>
+                <span class="dl-card__title">Download Traylist</span>
+                <span class="dl-card__meta" data-dl-meta>Direct from latest release</span>
+              </span>
+            </a>
+            <a class="dl-hero-secondary" href="#platforms">All platforms</a>
+          </div>
+
+          <p class="dl-hero__meta" id="download-version" aria-live="polite">Loading latest release…</p>
+          <p class="dl-hero__status" id="dl-status" role="status"></p>
+        </div>
+
+        <div class="dl-hero__visual" aria-hidden="true">
+          <div class="dl-hero__device dl-hero__device--desk">
+            <img src="assets/shot-desktop.png" alt="" width="420" />
+          </div>
+          <div class="dl-hero__device dl-hero__device--phone">
+            <img src="assets/shot-mobile-tasks.png" alt="" width="180" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform-specific CTAs -->
+    <section class="dl-section" id="platforms" aria-labelledby="all-platforms-title">
+      <div class="container">
+        <div class="dl-section__head">
+          <h2 id="all-platforms-title">Choose your platform</h2>
+          <p class="dl-section__lead">Tap once to download. Files come straight from the latest GitHub Release.</p>
+        </div>
+
+        <div class="dl-cards" id="download-buttons">
+          <a class="dl-card" data-dl="windows" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+            <span class="dl-card__badge">For you</span>
+            <span class="dl-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.1H3V5.5zm0 13 7.5 1.1v-7.2H3v6.1zM11.7 4.2 21 2.8v8.7h-9.3V4.2zm0 16.9L21 19.7v-8.2h-9.3v9.6z"/></svg>
+            </span>
+            <span class="dl-card__eyebrow">Windows</span>
+            <span class="dl-card__title">Installer (.msi)</span>
+            <span class="dl-card__meta" data-dl-meta>64-bit</span>
+            <span class="dl-card__cta">Download</span>
+          </a>
+
+          <a class="dl-card" data-dl="linux" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+            <span class="dl-card__badge">For you</span>
+            <span class="dl-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12.5 2C11.6 2 10.9 2.4 10.4 3.1c-.4.6-.5 1.3-.4 2.1.5-.1 1-.2 1.5-.1.6.1 1.1.4 1.4.9.4-.7.5-1.5.3-2.2C13 2.7 12.8 2 12.5 2zm-3.7 3.3c-.7.2-1.3.7-1.6 1.4-.4.8-.3 1.7.2 2.4.6-.4 1.3-.6 2-.5.6.1 1.2.4 1.6.9.1-.9-.1-1.8-.7-2.5-.5-.6-1-.9-1.5-1.7zm7.1.5c-.5.1-1 .4-1.4.9-.5.6-.7 1.4-.6 2.2.5-.3 1.1-.4 1.7-.3.6.1 1.1.5 1.4 1 .4-.7.4-1.6 0-2.3-.3-.6-.7-1.1-1.1-1.5zM9.3 10.2c-1.2.1-2.2.8-2.7 1.8-.7 1.4-.3 3.1.9 4 .4.3.6.8.5 1.3-.1.6-.5 1.1-1.1 1.3-.2.8.1 1.7.8 2.2.7.5 1.6.5 2.3 0 .4-.3.9-.4 1.4-.3.5.1.9.4 1.2.8.7.5 1.6.5 2.3 0 .7-.5 1-1.4.8-2.2-.6-.2-1-.7-1.1-1.3-.1-.5.1-1 .5-1.3 1.2-.9 1.6-2.6.9-4-.5-1-1.5-1.7-2.7-1.8-.5 0-1 .1-1.4.3-.5-.2-1-.3-1.5-.3-.5 0-1 .1-1.4.3-.4-.2-.9-.3-1.3-.3z"/></svg>
+            </span>
+            <span class="dl-card__eyebrow">Ubuntu / Linux</span>
+            <span class="dl-card__title">Package (.deb)</span>
+            <span class="dl-card__meta" data-dl-meta>amd64 preferred</span>
+            <span class="dl-card__cta">Download</span>
+          </a>
+
+          <a class="dl-card" data-dl="linux-appimage" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+            <span class="dl-card__badge">For you</span>
+            <span class="dl-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 21v-6h6v6"/></svg>
+            </span>
+            <span class="dl-card__eyebrow">Linux</span>
+            <span class="dl-card__title">AppImage</span>
+            <span class="dl-card__meta" data-dl-meta>No root needed</span>
+            <span class="dl-card__cta">Download</span>
+          </a>
+
+          <a class="dl-card" data-dl="mac-arm" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+            <span class="dl-card__badge">For you</span>
+            <span class="dl-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M18.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.3-.1-2.6.8-3.3.8-.7 0-1.8-.8-3-.7-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 0 0 .8 1.6 2.1 1.5.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6 1 0 1.6-1.5 1.6-1.5.3-.5.5-.9.7-1.4-1.5-.6-2.2-2.2-2.2-3.9zm-2.1-6.2c.5-.6.8-1.5.7-2.4-.7 0-1.6.5-2.1 1.1-.5.5-.9 1.4-.8 2.3.8.1 1.6-.4 2.2-1z"/></svg>
+            </span>
+            <span class="dl-card__eyebrow">macOS</span>
+            <span class="dl-card__title">Apple Silicon (.dmg)</span>
+            <span class="dl-card__meta" data-dl-meta>M1 / M2 / M3 / M4</span>
+            <span class="dl-card__cta">Download</span>
+          </a>
+
+          <a class="dl-card" data-dl="mac-intel" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+            <span class="dl-card__badge">For you</span>
+            <span class="dl-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M18.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.3-.1-2.6.8-3.3.8-.7 0-1.8-.8-3-.7-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 0 0 .8 1.6 2.1 1.5.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6 1 0 1.6-1.5 1.6-1.5.3-.5.5-.9.7-1.4-1.5-.6-2.2-2.2-2.2-3.9zm-2.1-6.2c.5-.6.8-1.5.7-2.4-.7 0-1.6.5-2.1 1.1-.5.5-.9 1.4-.8 2.3.8.1 1.6-.4 2.2-1z"/></svg>
+            </span>
+            <span class="dl-card__eyebrow">macOS</span>
+            <span class="dl-card__title">Intel (.dmg)</span>
+            <span class="dl-card__meta" data-dl-meta>x86_64</span>
+            <span class="dl-card__cta">Download</span>
+          </a>
+
+          <a class="dl-card" data-dl="android" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+            <span class="dl-card__badge">For you</span>
+            <span class="dl-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M17.6 9.5 19.2 6.7c.1-.2 0-.4-.2-.5-.2-.1-.4 0-.5.2l-1.6 2.8c-1.3-.6-2.8-.9-4.4-.9s-3.1.3-4.4.9L6.5 6.4c-.1-.2-.3-.3-.5-.2-.2.1-.3.3-.2.5l1.6 2.8C4.5 10.8 2.8 13.4 2.8 16.4h18.4c0-3-1.7-5.6-4.6-6.9zM8.5 14.2c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zm7 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zM6.2 17.2h11.6v1.6c0 .9-.7 1.6-1.6 1.6H7.8c-.9 0-1.6-.7-1.6-1.6v-1.6z"/></svg>
+            </span>
+            <span class="dl-card__eyebrow">Android</span>
+            <span class="dl-card__title">APK (arm64)</span>
+            <span class="dl-card__meta" data-dl-meta>Sideload · unknown sources</span>
+            <span class="dl-card__cta">Download</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust / why -->
+    <section class="dl-trust" aria-labelledby="trust-title">
+      <div class="container">
+        <h2 id="trust-title" class="visually-hidden">Why download from us</h2>
+        <ul class="dl-trust__list">
+          <li>
+            <span class="dl-trust__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <strong>Local-first</strong>
+            <span>Todos stay on your devices — no account required.</span>
+          </li>
+          <li>
+            <span class="dl-trust__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 9.5 17 19 7.5"/></svg>
+            </span>
+            <strong>Signed releases</strong>
+            <span>Installers publish from GitHub Actions on each version tag.</span>
+          </li>
+          <li>
+            <span class="dl-trust__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <strong>Wi‑Fi sync</strong>
+            <span>Pair desktop and Android on the same network when you want.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="dl-section" aria-labelledby="scripts-title">
+      <div class="container">
+        <div class="dl-section__head">
+          <h2 id="scripts-title">One-line installers</h2>
+          <p class="dl-section__lead">Prefer the terminal? These fetch the matching installer for your OS.</p>
+        </div>
+        <div class="dl-scripts dl-scripts--page">
+          <div class="dl-script">
+            <div class="dl-script__top">
+              <p class="dl-script__label">Linux / macOS</p>
+              <button type="button" class="dl-copy" data-copy="curl -fsSL https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.sh | bash" aria-label="Copy Linux and macOS install command">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span class="dl-copy__label">Copy</span>
+              </button>
+            </div>
+            <pre class="dl-script__code"><code>curl -fsSL https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.sh | bash</code></pre>
+          </div>
+          <div class="dl-script">
+            <div class="dl-script__top">
+              <p class="dl-script__label">Windows (PowerShell)</p>
+              <button type="button" class="dl-copy" data-copy="irm https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.ps1 | iex" aria-label="Copy Windows install command">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span class="dl-copy__label">Copy</span>
+              </button>
+            </div>
+            <pre class="dl-script__code"><code>irm https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.ps1 | iex</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dl-section dl-section--last" aria-labelledby="all-files-title">
+      <div class="container">
+        <div class="dl-section__head">
+          <h2 id="all-files-title">All release files</h2>
+          <p class="dl-section__lead">Every asset from the latest release — pick a specific arch if you need it.</p>
+        </div>
+        <div class="dl-table-wrap">
+          <table class="dl-table" id="dl-all-assets">
+            <thead>
+              <tr>
+                <th scope="col">File</th>
+                <th scope="col">Size</th>
+                <th scope="col"><span class="visually-hidden">Download</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="3">Loading…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="dl-footnote">
+          <a href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">View on GitHub Releases</a>
+          · Android: enable <strong>Install unknown apps</strong> for your browser before opening the APK.
+          · iOS is not available yet.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Traylist</p>
+      <p class="footer__note"><a href="index.html">Back to home</a> · Downloads from GitHub Releases</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -70,7 +70,9 @@ jobs:
           tagName: v__VERSION__
           releaseName: Traylist v__VERSION__
           releaseBody: |
-            Desktop installers for this version.
+            Desktop + Android builds for this version.
+
+            **Website downloads:** https://haroon966.github.io/traylist/#download
 
             **Install (Linux / macOS):**
             ```bash
@@ -81,6 +83,8 @@ jobs:
             ```powershell
             irm https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.ps1 | iex
             ```
+
+            **Android APK:** see release assets named `Traylist-*-android-aarch64.apk` (sideload; enable unknown sources).
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}

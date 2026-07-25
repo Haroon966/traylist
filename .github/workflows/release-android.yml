@@ -1,0 +1,111 @@
+name: Release Android APK
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install Rust stable (Android aarch64)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android NDK + platform
+        run: |
+          sdkmanager --install "ndk;28.2.13676358" "platforms;android-34" "build-tools;34.0.0"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "NDK_HOME=$ANDROID_HOME/ndk/28.2.13676358" >> "$GITHUB_ENV"
+          echo "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+
+      - name: Read app version
+        id: ver
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Install frontend deps
+        run: npm ci
+
+      - name: Build Android aarch64 APK (bundled frontend)
+        run: npm run tauri -- android build --target aarch64
+        env:
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+          ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
+          NDK_HOME: ${{ env.NDK_HOME }}
+
+      - name: Package release APK name
+        id: apk
+        run: |
+          set -euo pipefail
+          # Prefer release arm64, then universal release, then any aarch64/arm64 apk
+          CANDIDATE=$(
+            find src-tauri/gen/android/app/build/outputs/apk -type f -name '*.apk' \
+              | grep -E 'arm64|aarch64|universal' \
+              | grep -E '/release/' \
+              | head -n 1 \
+            || true
+          )
+          if [ -z "$CANDIDATE" ]; then
+            CANDIDATE=$(find src-tauri/gen/android/app/build/outputs/apk -type f -name '*.apk' | head -n 1)
+          fi
+          test -n "$CANDIDATE" || { echo "No APK found"; find src-tauri/gen/android/app/build/outputs -type f -name '*.apk' || true; exit 1; }
+          # Guard: must include bundled UI (index.html) — avoids blank tauri.localhost builds
+          unzip -l "$CANDIDATE" | grep -q 'assets/index.html' \
+            || { echo "APK missing assets/index.html: $CANDIDATE"; exit 1; }
+          OUT="Traylist-${{ steps.ver.outputs.version }}-android-aarch64.apk"
+          cp "$CANDIDATE" "$OUT"
+          echo "path=$OUT" >> "$GITHUB_OUTPUT"
+          ls -lh "$OUT"
+
+      - name: Upload APK to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: Traylist v${{ steps.ver.outputs.version }}
+          files: ${{ steps.apk.outputs.path }}
+          fail_on_unmatched_files: true
+          body: |
+            Desktop + Android builds for this version.
+
+            **Website:** https://haroon966.github.io/traylist/#download
+
+            **Install (Linux / macOS):**
+            ```bash
+            curl -fsSL https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.sh | bash
+            ```
+
+            **Install (Windows PowerShell):**
+            ```powershell
+            irm https://raw.githubusercontent.com/Haroon966/traylist/main/scripts/install.ps1 | iex
+            ```
+
+            **Android:** download `Traylist-*-android-aarch64.apk` and allow install from unknown sources.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

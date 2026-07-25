@@ -18,6 +18,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
+    "shots:website": "node scripts/capture-website-shots.mjs",
     "check:sync": "npx --yes tsx src/lib/merge.selfcheck.ts && npx --yes tsx src/lib/pairPayload.selfcheck.ts && npx --yes tsx src/lib/scanPairQr.selfcheck.ts && npx --yes tsx src/lib/firewall.selfcheck.ts"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "puppeteer-core": "^24.43.1",
     "tailwindcss": "^4.1.11",
     "typescript": "~5.8.3",
     "vite": "^7.0.4"

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Traylist — local-first system tray todo list for Ubuntu, macOS, and Windows, plus Android sync over the same Wi‑Fi. No account. Your data stays on your devices." />
-  <meta name="theme-color" content="#0D7377" />
+  <meta name="theme-color" content="#0D9488" />
   <title>Traylist — Todos in your system tray</title>
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/app-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -19,7 +19,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="nav__brand" href="#home">
-        <img class="nav__logo" src="assets/app-icon.png" width="28" height="28" alt="" />
+        <img class="nav__logo" src="assets/app-icon.png" width="28" alt="" />
         <span>Traylist</span>
       </a>
 
@@ -29,37 +29,38 @@
 
       <ul id="nav-menu" class="nav__links">
         <li><a href="#home" class="is-active">Home</a></li>
-        <li><a href="#about">About</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#desktop">Desktop</a></li>
         <li><a href="#android">Android</a></li>
         <li><a href="#sync">Wi‑Fi Sync</a></li>
-        <li class="nav__cta-wrap"><a class="btn btn--dark nav__cta nav__cta--menu" href="#download">Get The App</a></li>
+        <li class="nav__cta-wrap"><a class="btn btn--cta nav__cta nav__cta--menu" href="download.html">Download</a></li>
       </ul>
 
-      <a class="btn btn--dark nav__cta nav__cta--bar" href="#download">Get The App</a>
+      <a class="btn btn--cta nav__cta nav__cta--bar" href="download.html">Download</a>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section id="home" class="hero" aria-labelledby="hero-title">
+    <!-- HERO: brand-first, one CTA, product visual -->
+    <section id="home" class="hero" aria-labelledby="hero-brand">
       <div class="hero__bg" aria-hidden="true">
-        <img src="assets/hero-morning.png" alt="" class="hero__bg-img" width="1920" height="1080" />
+        <img src="assets/hero-morning.png" alt="" class="hero__bg-img" width="1920" />
         <div class="hero__bg-fade"></div>
       </div>
 
       <div class="hero__content">
         <div class="hero__copy reveal">
-          <h1 id="hero-title">Todos in your tray.<br />Synced on your Wi‑Fi.</h1>
+          <p class="hero__brand" id="hero-brand">
+            <img src="assets/app-icon.png" width="52" alt="" />
+            Traylist
+          </p>
+          <h1 id="hero-title">Todos in your tray. Synced on your Wi‑Fi.</h1>
           <p class="hero__sub">
-            Traylist is a local-first checklist for Ubuntu, macOS, and Windows — always one click
-            from the system tray — plus an Android app that pairs over the same network.
-            No account. No cloud. Your list stays on your devices.
+            Local-first checklist for Ubuntu, macOS, and Windows — plus Android on the same network. No account. No cloud.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--sky" href="#download">Download Traylist</a>
-            <a class="btn btn--ghost" href="#how-it-works">How it works</a>
+            <a class="btn btn--cta" href="download.html">Download Traylist</a>
+            <a class="btn btn--ghost" href="#features">See features</a>
           </div>
         </div>
 
@@ -67,18 +68,18 @@
           <div class="device-stack">
             <img
               class="device-stack__desk"
-              src="assets/traylist-desktop-ui.png"
-              alt="Traylist desktop panel showing a todo list with due dates in the system tray style"
+              src="assets/shot-desktop.png"
+              alt="Real Traylist desktop tray panel with tasks and due chips"
               width="640"
-              height="400"
+             
               loading="eager"
             />
             <img
               class="device-stack__phone"
-              src="assets/traylist-mobile-ui.png"
-              alt="Traylist Android app showing the same todos on a phone"
-              width="280"
-              height="560"
+              src="assets/shot-mobile-tasks.png"
+              alt="Traylist Android app with an open task"
+              width="457"
+             
               loading="eager"
             />
           </div>
@@ -95,6 +96,35 @@
         <li>Android</li>
         <li>Local Wi‑Fi</li>
       </ul>
+    </section>
+
+    <!-- Screenshots gallery (App Store pattern) -->
+    <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Product</span>
+          <h2 id="gallery-title">See it on desktop and phone</h2>
+          <p class="section__lead">Real captures from the app — desktop tray, Android home, empty day, and the home-screen widget.</p>
+        </div>
+        <div class="gallery__track reveal" tabindex="0" aria-label="Product screenshots">
+          <figure class="gallery__shot gallery__shot--wide">
+            <img src="assets/traylist-synced-devices.png" alt="Desktop tray and Android phone showing Traylist synced over Wi‑Fi" width="1536" loading="lazy" />
+            <figcaption>Desktop + phone · synced</figcaption>
+          </figure>
+          <figure class="gallery__shot">
+            <img src="assets/shot-desktop.png" alt="Traylist desktop tray panel with checklist and due chips" width="840" loading="lazy" />
+            <figcaption>Desktop tray panel</figcaption>
+          </figure>
+          <figure class="gallery__shot gallery__shot--phone">
+            <img src="assets/shot-mobile-tasks.png" alt="Traylist Android home with an open task" width="457" loading="lazy" />
+            <figcaption>Android · tasks</figcaption>
+          </figure>
+          <figure class="gallery__shot gallery__shot--phone">
+            <img src="assets/shot-widget-home.png" alt="Traylist home-screen widget on Android showing open tasks" width="457" loading="lazy" />
+            <figcaption>Home widget</figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
 
     <!-- ABOUT -->
@@ -120,7 +150,7 @@
           </ul>
         </div>
         <figure class="about__art reveal reveal--delay">
-          <img src="assets/empty-happy.png" alt="Traylist mascot — a friendly teal sprout character waving" width="640" height="640" loading="lazy" />
+          <img src="assets/empty-happy.png" alt="Traylist mascot — a friendly teal sprout character waving" width="640" loading="lazy" />
         </figure>
       </div>
     </section>
@@ -138,8 +168,8 @@
 
         <div class="feature-grid">
           <article class="feature-card feature-card--green reveal">
-            <div class="feature-card__art">
-              <img src="assets/traylist-feature-tray.png" alt="Illustration of a system tray todo popup beside a laptop" width="560" height="420" loading="lazy" />
+            <div class="feature-card__art feature-card__art--shot">
+              <img src="assets/shot-desktop.png" alt="Traylist tray panel open above the desktop" width="840" loading="lazy" />
             </div>
             <h3>Always in the tray</h3>
             <p>
@@ -149,8 +179,8 @@
           </article>
 
           <article class="feature-card feature-card--blue reveal reveal--delay">
-            <div class="feature-card__art">
-              <img src="assets/traylist-feature-due.png" alt="Illustration of due dates, calendar chips, and notifications" width="560" height="420" loading="lazy" />
+            <div class="feature-card__art feature-card__art--shot">
+              <img src="assets/shot-mobile-tasks.png" alt="Traylist Android list with an open task" width="457" loading="lazy" />
             </div>
             <h3>Natural due dates</h3>
             <p>
@@ -160,8 +190,8 @@
           </article>
 
           <article class="feature-card feature-card--orange reveal reveal--delay2">
-            <div class="feature-card__art">
-              <img src="assets/traylist-feature-sync.png" alt="Illustration of phone and laptop syncing over Wi-Fi with a QR code" width="560" height="420" loading="lazy" />
+            <div class="feature-card__art feature-card__art--shot">
+              <img src="assets/shot-sync.png" alt="Traylist tray menu showing Wi‑Fi Sync" width="840" loading="lazy" />
             </div>
             <h3>Same-Wi‑Fi sync</h3>
             <p>
@@ -203,7 +233,7 @@
           </article>
           <article class="module reveal reveal--delay2">
             <h3>Bin &amp; widgets</h3>
-            <p>Deleted items go to a bin. Android can surface tasks on a home-screen widget preview.</p>
+            <p>Deleted items go to a bin. Android can surface open tasks on a home-screen widget.</p>
           </article>
           <article class="module reveal">
             <h3>Light &amp; dark</h3>
@@ -263,11 +293,11 @@
 
         <div class="desktop-showcase reveal">
           <img
-            class="shot"
-            src="assets/traylist-desktop-ui.png"
-            alt="Traylist floating desktop panel with checklist, due chips, and tray-style chrome"
-            width="1100"
-            height="620"
+            class="shot shot--panel"
+            src="assets/shot-desktop.png"
+            alt="Traylist floating desktop tray panel with checklist and due chips"
+            width="840"
+           
             loading="lazy"
           />
         </div>
@@ -315,14 +345,21 @@
           <ul class="check-list">
             <li>Scan QR or enter 6-digit code</li>
             <li>Find desktop on the LAN</li>
-            <li>Home widget preview for open tasks</li>
+            <li>Home widget for open tasks</li>
             <li>Bin for recently deleted items</li>
           </ul>
-          <a class="btn btn--teal" href="#download">Get Android build</a>
+          <a class="btn btn--cta" href="download.html">Download Android APK</a>
         </div>
-        <figure class="phone-frame reveal reveal--delay">
-          <img src="assets/traylist-mobile-ui.png" alt="Traylist on Android — todo list with due chips" width="360" height="720" loading="lazy" />
-        </figure>
+        <div class="android-shots reveal reveal--delay" aria-label="Android screenshots">
+          <figure class="phone-frame">
+            <img src="assets/shot-mobile-tasks.png" alt="Traylist Android app showing an open task" width="457" loading="lazy" />
+            <figcaption>App</figcaption>
+          </figure>
+          <figure class="phone-frame">
+            <img src="assets/shot-widget-home.png" alt="Traylist home-screen widget with open task count" width="457" loading="lazy" />
+            <figcaption>Widget</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -337,7 +374,14 @@
             Pairing is one-time and token-gated. After that, both sides push patches whenever they’re
             on the same Wi‑Fi. No Traylist cloud in the middle.
           </p>
-          <img class="sync__img" src="assets/traylist-feature-sync.png" alt="Phone and laptop syncing over local Wi-Fi" width="640" height="480" loading="lazy" />
+          <img
+            class="sync__img sync__img--hero"
+            src="assets/traylist-synced-devices.png"
+            alt="Traylist on laptop tray and Android phone together — same list synced over Wi‑Fi"
+            width="1536"
+           
+            loading="lazy"
+          />
         </div>
         <ol class="sync-steps reveal reveal--delay">
           <li><strong>Enable on desktop</strong> — ⋯ → Wi‑Fi Sync… → turn sync on.</li>
@@ -480,28 +524,44 @@
     <section id="download" class="section download" aria-labelledby="download-title">
       <div class="container download__box reveal">
         <div>
-          <h2 id="download-title">Get Traylist on your machines</h2>
+          <h2 id="download-title">Get Traylist on every machine</h2>
           <p>
-            Build installers with <code>npm run tauri build</code>. Artifacts land under
-            <code>src-tauri/target/release/bundle/</code>. Android: <code>npm run tauri android build</code>.
+            One-click installers for Windows, Linux, macOS, and Android.
+            Open the download page for every direct link, or grab your platform below.
           </p>
-          <div class="store-row">
-            <a class="store-btn" href="#desktop">
-              <img src="assets/tray-icon.png" width="22" height="22" alt="" />
-              <span><small>Desktop</small>Linux · macOS · Windows</span>
+          <p class="download__version" id="download-version" hidden></p>
+
+          <div class="download__cta-row">
+            <a class="btn btn--cta" href="download.html">Open download page</a>
+            <a class="btn btn--ghost" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">GitHub Releases</a>
+          </div>
+
+          <div class="dl-grid" id="download-buttons" aria-label="Platform downloads">
+            <a class="store-btn" data-dl="windows" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.5 4.4v7.1H3V5.5zm0 13 7.5 1.1v-7.2H3v6.1zM11.7 4.2 21 2.8v8.7h-9.3V4.2zm0 16.9L21 19.7v-8.2h-9.3v9.6z"/></svg>
+              <span><small>Windows</small>Download .msi</span>
             </a>
-            <a class="store-btn" href="#android">
-              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3.6 2.3c-.3.2-.6.6-.6 1.1v17.2c0 .5.3.9.6 1.1l9.4-9.7L3.6 2.3zm12.1 7.1L13 7.7 4.8 2.7l9.5 9.5 1.4-2.8zM4.8 21.3l8.2-5 2.7-1.7-1.4-2.8-9.5 9.5zm14.2-7.5c.5-.3.8-.7.8-1.3s-.3-1-.8-1.3l-2.2-1.3-2.5 2.6 2.5 2.6 2.2-1.3z"/></svg>
-              <span><small>Companion</small>Android</span>
+            <a class="store-btn" data-dl="linux" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12.5 2c-.9 0-1.6.4-2.1 1.1-.4.6-.5 1.3-.4 2.1.5-.1 1-.2 1.5-.1.6.1 1.1.4 1.4.9.4-.7.5-1.5.3-2.2C13 2.7 12.8 2 12.5 2zm-3.7 3.3c-.7.2-1.3.7-1.6 1.4-.4.8-.3 1.7.2 2.4.6-.4 1.3-.6 2-.5.6.1 1.2.4 1.6.9.1-.9-.1-1.8-.7-2.5-.5-.6-1-.9-1.5-1.7zm7.1.5c-.5.1-1 .4-1.4.9-.5.6-.7 1.4-.6 2.2.5-.3 1.1-.4 1.7-.3.6.1 1.1.5 1.4 1 .4-.7.4-1.6 0-2.3-.3-.6-.7-1.1-1.1-1.5zM9.3 10.2c-1.2.1-2.2.8-2.7 1.8-.7 1.4-.3 3.1.9 4 .4.3.6.8.5 1.3-.1.6-.5 1.1-1.1 1.3-.2.8.1 1.7.8 2.2.7.5 1.6.5 2.3 0 .4-.3.9-.4 1.4-.3.5.1.9.4 1.2.8.7.5 1.6.5 2.3 0 .7-.5 1-1.4.8-2.2-.6-.2-1-.7-1.1-1.3-.1-.5.1-1 .5-1.3 1.2-.9 1.6-2.6.9-4-.5-1-1.5-1.7-2.7-1.8-.5 0-1 .1-1.4.3-.5-.2-1-.3-1.5-.3-.5 0-1 .1-1.4.3-.4-.2-.9-.3-1.3-.3z"/></svg>
+              <span><small>Ubuntu / Linux</small>Download .deb</span>
             </a>
-            <a class="store-btn store-btn--desk" href="#sync">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              <span><small>Then</small>Pair over Wi‑Fi</span>
+            <a class="store-btn" data-dl="mac-arm" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M18.7 12.6c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.3-.1-2.6.8-3.3.8-.7 0-1.8-.8-3-.7-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 0 0 .8 1.6 2.1 1.5.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6 1 0 1.6-1.5 1.6-1.5.3-.5.5-.9.7-1.4-1.5-.6-2.2-2.2-2.2-3.9zm-2.1-6.2c.5-.6.8-1.5.7-2.4-.7 0-1.6.5-2.1 1.1-.5.5-.9 1.4-.8 2.3.8.1 1.6-.4 2.2-1z"/></svg>
+              <span><small>macOS · Apple Silicon</small>Download .dmg</span>
+            </a>
+            <a class="store-btn" data-dl="android" href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M17.6 9.5 19.2 6.7c.1-.2 0-.4-.2-.5-.2-.1-.4 0-.5.2l-1.6 2.8c-1.3-.6-2.8-.9-4.4-.9s-3.1.3-4.4.9L6.5 6.4c-.1-.2-.3-.3-.5-.2-.2.1-.3.3-.2.5l1.6 2.8C4.5 10.8 2.8 13.4 2.8 16.4h18.4c0-3-1.7-5.6-4.6-6.9zM8.5 14.2c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zm7 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zM6.2 17.2h11.6v1.6c0 .9-.7 1.6-1.6 1.6H7.8c-.9 0-1.6-.7-1.6-1.6v-1.6z"/></svg>
+              <span><small>Android</small>Download .apk</span>
             </a>
           </div>
+          <p class="download__hint">
+            Prefer every file and one-liners?
+            <a class="download__link" href="download.html">Go to the download page</a>.
+            iOS is not available yet.
+          </p>
         </div>
         <div class="download__mascot" aria-hidden="true">
-          <img src="assets/empty-happy.png" alt="" width="180" height="180" />
+          <img src="assets/empty-happy.png" alt="" width="180" />
         </div>
       </div>
     </section>
@@ -511,7 +571,7 @@
     <div class="container footer__grid">
       <div>
         <a class="nav__brand footer__brand" href="#home">
-          <img class="nav__logo" src="assets/app-icon.png" width="28" height="28" alt="" />
+          <img class="nav__logo" src="assets/app-icon.png" width="28" alt="" />
           Traylist
         </a>
         <p>Local-first system tray todos for desktop, with Android sync on your Wi‑Fi.</p>
@@ -538,14 +598,15 @@
       <div>
         <h3>Build</h3>
         <ul>
-          <li><a href="#download">Download / build</a></li>
-          <li><a href="#faq">Build FAQ</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">GitHub Releases</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer__bottom">
       <p>© <span id="year"></span> Traylist. Local-first by design.</p>
-      <p class="footer__note">Marketing site for GitHub Pages — install via local Tauri builds.</p>
+      <p class="footer__note">Downloads from <a href="https://github.com/Haroon966/traylist/releases/latest" rel="noopener noreferrer">GitHub Releases</a>.</p>
     </div>
   </footer>
 
